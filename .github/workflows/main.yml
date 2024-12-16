@@ -32,7 +32,7 @@ jobs:
         run: npm install
         working-directory: lambda
       - name: Create zip file
-        run: zip -r package.zip handler.js package.json node_modules
+        run: zip -r package.zip handler.js package.json jokes.txt node_modules
         working-directory: lambda
       - name: Upload zip file
         uses: actions/upload-artifact@v4
