@@ -1,9 +1,9 @@
 resource "aws_lambda_function" "text_function" {
   function_name = var.function_name
-  handler       = var.handler
   runtime       = var.runtime
-  role          = aws_iam_role.lambda_exec.arn
+  handler       = var.handler
   filename      = var.package_path
+  role          = aws_iam_role.lambda_exec.arn
 
   environment {
     variables = {
@@ -19,12 +19,12 @@ resource "aws_iam_role" "lambda_exec" {
     Version = "2012-10-17"
     Statement = [
       {
-        Action = "sts:AssumeRole"
+        Effect    = "Allow"
+        Action    = "sts:AssumeRole"
+        Sid       = ""
         Principal = {
           Service = "lambda.amazonaws.com"
         }
-        Effect = "Allow"
-        Sid    = ""
       },
     ]
   })
