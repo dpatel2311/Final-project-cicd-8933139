@@ -96,7 +96,7 @@ jobs:
       - name: Deploy Lambda Function
         run: |
           aws lambda update-function-code \
-            --function-name 8933139-lambda-function \
+            --function-name 8933139-source-of-jokes \
             --zip-file fileb://lambda/package.zip \
             --region us-east-1
         env:
