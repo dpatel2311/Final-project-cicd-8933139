@@ -82,7 +82,7 @@ jobs:
       - name: Deploy Lambda
         run: |
           aws lambda update-function-code \
-            --function-name Function-8934575 \
+            --function-name 8933139-lambda-function \
             --zip-file fileb://lambda/package.zip \
             --region us-east-1
         env:
